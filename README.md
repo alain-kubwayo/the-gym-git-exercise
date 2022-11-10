@@ -77,3 +77,102 @@ To https://github.com/alain-kubwayo/the-gym-git-exercise-solutions.git
  - [deleted]         test
 ➜  the-gym-git-exercises git:(dev) 
 ```
+
+### Exercise 2
+
+```bash
+➜  the-gym-git-exercises git:(dev) ✗ git status
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        home.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+➜  the-gym-git-exercises git:(dev) ✗ git stash list
+➜  the-gym-git-exercises git:(dev) ✗ git add home.html
+➜  the-gym-git-exercises git:(dev) ✗ git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   home.html
+
+➜  the-gym-git-exercises git:(dev) ✗ git stash
+Saved working directory and index state WIP on dev: ae3f7c8 add solution to exercise 1 of bundle 1
+➜  the-gym-git-exercises git:(dev) git stash list
+➜  the-gym-git-exercises git:(dev) git status
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        about.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+➜  the-gym-git-exercises git:(dev) ✗ git add about.html
+➜  the-gym-git-exercises git:(dev) ✗ git stash
+Saved working directory and index state WIP on dev: ae3f7c8 add solution to exercise 1 of bundle 1
+➜  the-gym-git-exercises git:(dev) git stash list
+➜  the-gym-git-exercises git:(dev) git status
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        team.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+➜  the-gym-git-exercises git:(dev) ✗ git add team.html
+➜  the-gym-git-exercises git:(dev) ✗ git stash
+Saved working directory and index state WIP on dev: ae3f7c8 add solution to exercise 1 of bundle 1
+➜  the-gym-git-exercises git:(dev) git stash list
+➜  the-gym-git-exercises git:(dev) git stash pop stash@{1}
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Dropped stash@{1} (a874b7c9e0ff2af138b33d8b9a30b438697e42f7)
+➜  the-gym-git-exercises git:(dev) ✗ git stash list
+➜  the-gym-git-exercises git:(dev) ✗ git stash pop stash@{1}
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+Dropped stash@{1} (641a22f2dee1013b5475e36605071f5ce527346e)
+➜  the-gym-git-exercises git:(dev) ✗ git add --all
+➜  the-gym-git-exercises git:(dev) ✗ git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+➜  the-gym-git-exercises git:(dev) ✗ git commit -m "add home and about pages"
+[dev d1c459f] add home and about pages
+ 2 files changed, 18 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 home.html
+➜  the-gym-git-exercises git:(dev) git push origin dev
+fatal: unable to access 'https://github.com/alain-kubwayo/the-gym-git-exercise-solutions.git/': Could not resolve host: github.com
+➜  the-gym-git-exercises git:(dev) git push origin dev
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 518 bytes | 518.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/alain-kubwayo/the-gym-git-exercise-solutions.git
+   ae3f7c8..d1c459f  dev -> dev
+➜  the-gym-git-exercises git:(dev) git status
+On branch dev
+nothing to commit, working tree clean
+➜  the-gym-git-exercises git:(dev) git stash list
+➜  the-gym-git-exercises git:(dev) git stash pop
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   team.html
+
+Dropped refs/stash@{0} (5518c343ad8310bf7168ce5b462d333122fa66f8)
+➜  the-gym-git-exercises git:(dev) ✗ git reset --hard 
+HEAD is now at d1c459f add home and about pages
+➜  the-gym-git-exercises git:(dev) ✗ 
+```
